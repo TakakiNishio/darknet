@@ -4,6 +4,8 @@ import random
 import cv2
 import colorsys
 import numpy as np
+import os
+import shutil
 import argparse
 
 
@@ -225,15 +227,20 @@ def convertBack(x, y, w, h):
 
 if __name__ == "__main__":
 
+    
+    if os.path.isdir('data'):
+        shutil.rmtree('data')
+
+    os.mkdir("data")
+    shutil.copy("../data/coco.names","data")
 
     net = load_net("../cfg/yolov3.cfg", "../yolov3.weights", 0)
     meta = load_meta("../cfg/coco.data")
 
-    # net = load_net("../cfg/yolov3.cfg", "../yolov3.weights", 0)
-    # meta = load_meta("../cfg/coco.data")
-
     # net = load_net("../cfg/yolov2.cfg", "../yolov2.weights", 0)
     # meta = load_meta("../cfg/coco.data")
+
+    shutil.rmtree("data")
 
     color = (0,255,0)
 

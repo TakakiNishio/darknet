@@ -4,6 +4,8 @@ import random
 import cv2
 import colorsys
 import numpy as np
+import os
+import shutil
 import argparse
 
 from darknet import *
@@ -18,8 +20,16 @@ if __name__ == "__main__":
     weights_filename = "../yolov3.weights"
     meta_filename = "../cfg/coco.data"
 
+    if os.path.isdir('data'):
+        shutil.rmtree('data')
+
+    os.mkdir("data")
+    shutil.copy("../data/coco.names","data")
+
     net = load_net(net_filename.encode('utf-8'), weights_filename.encode('utf-8'), 0)
     meta = load_meta(meta_filename.encode('utf-8'))
+
+    shutil.rmtree("data")
 
     color = (0,255,0)
 

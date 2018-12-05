@@ -6,7 +6,9 @@ import colorsys
 import numpy as np
 import argparse
 import os
+import shutil
 import copy
+
 
 def sample(probs):
     s = sum(probs)
@@ -251,10 +253,19 @@ if __name__ == "__main__":
     parser.add_argument('--margin', '-m', type=int, default=0,help='margin value')
     args = parser.parse_args()
 
+    if os.path.isdir('data'):
+        shutil.rmtree('data')
+
+    os.mkdir("data")
+    shutil.copy("../data/coco.names","data")
+
     net = load_net("../cfg/yolov3.cfg", "../yolov3.weights", 0)
     meta = load_meta("../cfg/coco.data")
+
     # net = load_net("../cfg/yolov2.cfg", "../yolov2.weights", 0)
     # meta = load_meta("../cfg/coco.data")
+
+    shutil.rmtree("data")
 
     # input_path = "../../../dataset/downloads/" + args.input_image_directory
     input_path = args.input_image_directory
