@@ -8,6 +8,7 @@
 *.so
 *.a
 *.weights
+*.model
 old/
 mnist/
 data/
