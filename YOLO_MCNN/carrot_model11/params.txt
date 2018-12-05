@@ -1,0 +1,52 @@
+train_N: 15000
+validation_N: 1500
+
+minibatch-size: 50
+epoch: 15
+
+using GPU 
+
+epoch       main/accuracy  validation/main/accuracy
+1           0.787733       0.906667                  
+2           0.926467       0.948667                  
+3           0.950467       0.970667                  
+4           0.962934       0.962666                  
+5           0.970067       0.974667                  
+6           0.974667       0.976667                  
+7           0.978134       0.976667                  
+8           0.983067       0.990667                  
+9           0.9856         0.981333                  
+10          0.989001       0.988667                  
+11          0.9862         0.988667                  
+12          0.989667       0.991333                  
+13          0.992667       0.99                      
+14          0.990734       0.989333                  
+15          0.993134       0.987333                  
+execution time : 3390.42402792
+model saved
+
+
+input: 150*150
+
+SUPERPOSITION
+
+
+
+
+POSITIVE(99.94%)
+996 actual: 0 estimated: 1 time:0.01173 [sec]
+
+POSITIVE(98.19%)
+997 actual: 1 estimated: 1 time:0.01035 [sec]
+
+NEGATIVE(100.00)
+998 actual: 0 estimated: 0 time:0.01015 [sec]
+
+POSITIVE(99.98%)
+999 actual: 1 estimated: 1 time:0.01033 [sec]
+
+POSITIVE(100.00%)
+1000 actual: 1 estimated: 1 time:0.01031 [sec]
+test accuracy: 98.9
+mistake rate: 0.3
+

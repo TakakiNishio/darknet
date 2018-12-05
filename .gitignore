@@ -9,6 +9,8 @@
 *.a
 *.weights
 *.model
+*.avi
+*.*~
 old/
 mnist/
 data/

@@ -1,0 +1,28 @@
+train_N: 5000
+validation_N: 500
+
+minibatch-size: 50
+epoch: 10
+
+using GPU 
+
+epoch       main/accuracy  validation/main/accuracy
+1           0.6288         0.7                       
+2           0.7902         0.858                     
+3           0.8628         0.882                     
+4           0.8992         0.898                     
+5           0.9126         0.916                     
+6           0.9142         0.922                     
+7           0.9274         0.944                     
+8           0.9386         0.948                     
+9           0.942          0.928                     
+10          0.948          0.942                     
+execution time : 909.009371042
+
+
+model saved
+
+
+input: 150*150
+
+SUPERPOSITION
